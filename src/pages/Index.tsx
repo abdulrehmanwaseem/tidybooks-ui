@@ -12,7 +12,7 @@ const Index = () => {
         <main>
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            {/* Add more routes here */}
+            <Route path="*" element={<div className="p-6">Coming soon...</div>} />
           </Routes>
         </main>
       </div>
