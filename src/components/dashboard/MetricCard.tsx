@@ -22,7 +22,7 @@ const MetricCard = ({
   return (
     <Card
       className={cn(
-        "p-6 glass-card transition-all duration-200 hover:scale-[1.02]",
+        "dashboard-card transition-all duration-200 hover:scale-[1.02]",
         className
       )}
     >
@@ -33,15 +33,16 @@ const MetricCard = ({
           {trend && (
             <p
               className={cn(
-                "text-sm mt-2",
+                "text-sm mt-2 flex items-center gap-1",
                 trend.isPositive ? "text-green-600" : "text-red-600"
               )}
             >
               {trend.isPositive ? "↑" : "↓"} {Math.abs(trend.value)}%
+              <span className="text-muted-foreground">vs last month</span>
             </p>
           )}
         </div>
-        <div className="p-3 bg-primary/10 rounded-full">{icon}</div>
+        <div className="p-3 bg-primary/10 rounded-full text-primary">{icon}</div>
       </div>
     </Card>
   );

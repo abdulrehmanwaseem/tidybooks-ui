@@ -36,14 +36,19 @@ const RecentTransactions = () => {
   ];
 
   return (
-    <Card className="glass-card p-6">
-      <h3 className="text-lg font-semibold mb-4">Recent Transactions</h3>
+    <Card className="dashboard-card">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-semibold">Recent Transactions</h3>
+        <button className="text-sm text-primary hover:underline">
+          View all
+        </button>
+      </div>
       <ScrollArea className="h-[300px] pr-4">
         <div className="space-y-4">
           {transactions.map((transaction) => (
             <div
               key={transaction.id}
-              className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <div>
                 <p className="font-medium">{transaction.description}</p>
