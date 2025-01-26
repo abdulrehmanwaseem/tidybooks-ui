@@ -5,11 +5,11 @@ import Dashboard from "@/pages/Dashboard";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F6F8FA]">
       <Sidebar />
       <div className="main-content">
         <Navbar />
-        <main className="p-6">
+        <main>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             {/* Add more routes here */}

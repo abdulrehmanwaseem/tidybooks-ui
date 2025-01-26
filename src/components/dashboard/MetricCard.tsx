@@ -22,27 +22,24 @@ const MetricCard = ({
   return (
     <Card
       className={cn(
-        "dashboard-card transition-all duration-200 hover:scale-[1.02]",
+        "relative overflow-hidden text-white",
         className
       )}
     >
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-sm font-medium text-muted-foreground">{title}</p>
-          <h3 className="text-2xl font-semibold mt-2">{value}</h3>
-          {trend && (
-            <p
-              className={cn(
-                "text-sm mt-2 flex items-center gap-1",
-                trend.isPositive ? "text-green-600" : "text-red-600"
-              )}
-            >
-              {trend.isPositive ? "↑" : "↓"} {Math.abs(trend.value)}%
-              <span className="text-muted-foreground">vs last month</span>
-            </p>
-          )}
+      <div className="absolute top-0 right-0 p-4">
+        <div className="rounded-full bg-white/20 p-2">
+          {icon}
         </div>
-        <div className="p-3 bg-primary/10 rounded-full text-primary">{icon}</div>
+      </div>
+      <div className="p-6 space-y-2">
+        <p className="text-sm font-medium text-white/80">{title}</p>
+        <h3 className="text-2xl font-bold">{value}</h3>
+        {trend && (
+          <p className="text-sm flex items-center gap-1 text-white/90">
+            {trend.isPositive ? "↑" : "↓"} {Math.abs(trend.value)}%
+            <span className="text-white/60">vs last month</span>
+          </p>
+        )}
       </div>
     </Card>
   );

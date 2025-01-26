@@ -36,23 +36,23 @@ const RecentTransactions = () => {
   ];
 
   return (
-    <Card className="dashboard-card">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold">Recent Transactions</h3>
-        <button className="text-sm text-primary hover:underline">
+    <Card className="bg-white shadow-sm border-0">
+      <div className="flex items-center justify-between p-6 border-b">
+        <h3 className="text-lg font-semibold text-gray-800">Recent Transactions</h3>
+        <button className="text-sm text-primary hover:text-primary/80 font-medium">
           View all
         </button>
       </div>
-      <ScrollArea className="h-[300px] pr-4">
-        <div className="space-y-4">
+      <ScrollArea className="h-[400px]">
+        <div className="p-6 space-y-4">
           {transactions.map((transaction) => (
             <div
               key={transaction.id}
-              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center justify-between p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
             >
               <div>
-                <p className="font-medium">{transaction.description}</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="font-medium text-gray-800">{transaction.description}</p>
+                <p className="text-sm text-gray-500">
                   {new Date(transaction.date).toLocaleDateString()}
                 </p>
               </div>
